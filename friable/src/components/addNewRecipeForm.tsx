@@ -1,15 +1,37 @@
-import React, { FormEvent } from 'react';
+import React, {  FormEvent, useState ,MouseEvent} from 'react';
 import { TextField, Button, Grid, Typography, InputLabel, Select, MenuItem, TextareaAutosize } from '@mui/material';
 
 const AddNewRecipeForm = () => {
-  const [ingerdient, setIngredient] = React.useState('');
-  const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Handle form submission logic here
+  const [ingerdient, setIngredient] = useState([]);
+
+  // const handleSubmit: FC = (event:FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   // Handle form submission logic here save the recipe in db
+  // };
+  
+  const handleClick = () => {
+    // Handle button click logic here
+    console.log('Button clicked');
   };
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setIngredient(event.target.value as string);
+
+function handleSubmit(event: FormEvent<HTMLFormElement>): void {
+  throw new Error('Function not implemented.');
+   // Handle form submission logic here save the recipe in db
+};
+
+function AddNewIngredient(){ // Handle button click logic here
+console.log('Button clicked');
+};
+function AddNewStep(){ // Handle button click logic here
+  console.log('Button clicked');
   };
+  function SaveRecipe(){ // Handle button click logic here
+    console.log('Button clicked');
+    };
+    function EditRecipe(){ // Handle button click logic here
+      console.log('Button clicked');
+      };
+
   // export interface IRecipe {
   //   recipeName: string;
   //   utherName: string;
@@ -62,9 +84,14 @@ const AddNewRecipeForm = () => {
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
         <TextField label="amount"  />
-        <Button  type="submit" variant="contained" color="primary" >
-            ADD 
-          </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          onClick={ AddNewIngredient}
+        >
+          ADD
+        </Button>
         </Grid>
         <Typography variant='h5' component='h5'>
         Instructions:
@@ -78,15 +105,24 @@ const AddNewRecipeForm = () => {
         <TextareaAutosize aria-label="minimum height" minRows={4} 
         placeholder="Instinstructionsr"  />
          <span>
-         <Button type="submit" variant="contained" color="primary">
+         <Button type="submit" variant="contained" color="primary"
+         onClick={ AddNewStep}
+         >
             Add step 
           </Button>
          </span>
           </Grid>
         <Grid item >
 
-          <Button type="submit" variant="contained" color="primary" >
-            ADD Recipe
+          <Button type="submit" variant="contained" color="primary"
+                  onClick={ SaveRecipe}
+           >
+            Save Recipe
+          </Button>
+          <Button type="submit" variant="contained" color="primary"
+                   onClick={ EditRecipe}
+           >
+          Edit Recipe
           </Button>
         </Grid>
       </Grid>
