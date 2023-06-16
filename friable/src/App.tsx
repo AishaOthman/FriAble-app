@@ -17,6 +17,7 @@ import RecipeDetails from './pages/RecipeDetails/RecipeDetails';
 import Registration from './pages/Registration/Registration';
 import UserCookBook from './pages/UserCookBook/UserCookBook';
 import RecipeSelectBar from './components/RecipeSelectBar';
+import RecipeIngRow from './components/RecipeIngRow';
 // import AppBar from '@mui/material';
 
 function App() {
@@ -30,12 +31,13 @@ function App() {
         <Route path= "/"  element={<Results/>} />
         <Route path ="/Home" element={<Home/>}/>
         <Route path ="/Login" element={<Login/>}/>
-        <Route path ="/AddRecipe" element={<AddRecipe/>}/>
+        <Route path ="/AddRecipe" element={<AddRecipe ingredientsList={[]}/>}/>
         <Route path ="/ListOfIngredients" element={<ListOfIngredients/>}/>
         <Route path= "/RecipeDetails"  element={<RecipeDetails/>} />
         <Route path ="/Registration" element={<Registration/>}/>
         <Route path ="/UserCookBook" element={<UserCookBook/>}/>
         <Route path ="/RecipeSelectBar" element={<RecipeSelectBar/>}/>
+        <Route path ="/RecipeIngRow" element={<RecipeIngRow/>}/>
       </Routes>
     </BrowserRouter>);
   //   <div className='App'>
