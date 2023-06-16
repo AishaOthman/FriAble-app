@@ -1,7 +1,7 @@
 export interface QueryPayload {
     payload: string | string [];
 }
-export interface ingredient {
+export interface IIngredient {
     name: string;
     amount: string;
   }
@@ -16,6 +16,6 @@ export interface IRecipe {
       skilLevel:string;
       dishType:string;
       serves:number;
-      ingredients:ingredient[]
+      ingredients:IIngredient[]
       instructions:string[];
 }
